@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wYMagicTool</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gray: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            600: '#52525b',
+                            800: '#27272a',
+                            900: '#18181b',
+                        },
+                        red: {
+                            50: '#fef2f2',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                        },
+                        blue: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            600: '#2563eb',
+                        },
+                        whatsapp: '#25D366',
+                        'whatsapp-dark': '#1EBE55'
+                    },
+                    boxShadow: {
+                        'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'floating': '0 0 0 1px rgba(0,0,0,0.05), 0 8px 16px -4px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fafafa;
+            /* Patrón de puntos muy sutil estilo Vercel */
+            background-image: radial-gradient(#e4e4e7 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        /* Animación suave de entrada para los elementos */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+    </style>
+</head>
+<body class="text-gray-900 font-sans antialiased selection:bg-red-500 selection:text-white pb-20 relative">
+
+    <!-- Navegación Flotante estilo Píldora -->
+    <div class="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 animate-fade-in">
+        <nav class="bg-white/80 backdrop-blur-md border border-gray-200 shadow-floating rounded-full px-6 py-3 flex items-center gap-5 sm:gap-6 text-sm font-medium transition-all">
+            <a href="#" class="text-gray-900 hover:text-red-600 transition-colors hidden sm:block">Inicio</a>
+            <a href="#descargas" class="text-gray-500 hover:text-red-600 transition-colors">Descargas</a>
+            <a href="#updates" class="text-gray-500 hover:text-red-600 transition-colors">Updates</a>
+            <a href="#reseller" class="text-gray-500 hover:text-red-600 transition-colors">Reseller</a>
+        </nav>
+    </div>
+
+    <!-- Contenedor Principal Centralizado -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40">
+        
+        <!-- Hero Section -->
+        <header class="flex flex-col items-center sm:items-start text-center sm:text-left mb-16 animate-fade-in delay-100">
+            
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+                wYMagic<span class="text-red-600">Tool</span>
+            </h1>
+            
+            <p class="text-lg text-gray-500 mb-8 max-w-xl leading-relaxed font-medium">
+                Best GSM Services
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto" id="descargas">
+                <a href="https://drive.google.com/file/d/1XMjmXX6wbuSS9WM83TdqZZXPzeU6mfCU/view?usp=drive_link" target="_blank" class="flex items-center justify-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl font-medium transition-all transform active:scale-95 shadow-sm">
+                    <i class="fa-solid fa-download"></i>
+                    Descargar v0.042
+                </a>
+            </div>
+        </header>
+
+        <!-- Stats / Quick Info -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16 animate-fade-in delay-200">
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-subtle hover:border-gray-300 transition-colors">
+                <div class="text-gray-400 mb-1"><i class="fa-solid fa-code-commit"></i></div>
+                <div class="text-2xl font-bold text-gray-900 tracking-tight">0.042</div>
+                <div class="text-xs text-gray-500 font-medium">Última Versión</div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-subtle hover:border-gray-300 transition-colors">
+                <div class="text-gray-400 mb-1"><i class="fa-solid fa-weight-hanging"></i></div>
+                <div class="text-2xl font-bold text-gray-900 tracking-tight">15 MB</div>
+                <div class="text-xs text-gray-500 font-medium">Tamaño Ligero</div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-subtle hover:border-gray-300 transition-colors col-span-2 sm:col-span-2 flex flex-col justify-center">
+                <div class="text-sm font-semibold text-gray-900 mb-1">Soporte Multiplataforma</div>
+                <div class="text-sm text-gray-500">Windows 10/11 (x64 & ARM) compilado nativamente sin dependencias externas.</div>
+            </div>
+        </section>
+
+        <!-- Updates Section -->
+        <section id="updates" class="mb-16 animate-fade-in delay-300">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center border border-red-100">
+                    <i class="fa-solid fa-bolt text-sm"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">Updates</h2>
+            </div>
+
+            <!-- Feed de actualizaciones -->
+            <div class="space-y-4">
+                
+                <!-- Update Card 1 (Latest: v0.040) -->
+                <article class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-subtle hover:shadow-md transition-shadow group">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h3 class="text-xl font-bold text-gray-900">v0.042</h3>
+                                <span class="bg-gray-100 text-gray-700 border border-gray-200 text-[10px] uppercase font-bold px-2 py-0.5 rounded-full tracking-wide">Latest</span>
+                            </div>
+                            <p class="text-sm text-gray-500 font-medium">Publicado recientemente</p>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1XMjmXX6wbuSS9WM83TdqZZXPzeU6mfCU/view?usp=drive_link" target="_blank" class="shrink-0 w-10 h-10 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 hover:border-gray-300 transition-colors">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+
+                    <div class="prose prose-sm text-gray-600 max-w-none">
+                        <ul class="space-y-3 list-none p-0">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-palette text-blue-500 mt-1 text-xs"></i>
+                                <span>Ahora wYMagicXsu es compatible con HyperOs.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-brands fa-android text-green-500 mt-1 text-xs"></i>
+                                <span>Ahora wYMagicXsu se auto conecta a la red wifi.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-shield-halved text-red-500 mt-1 text-xs"></i>
+                                <span>Ahora wYMagicXsu no aparece en la lista de App de inicio.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Update Card 2 (Historial) -->
+                <article class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-subtle hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-5">
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h3 class="text-lg font-bold text-gray-900">v0.033</h3>
+                            </div>
+                            <p class="text-sm text-gray-500 font-medium">Versión anterior</p>
+                        </div>
+                    </div>
+
+                    <div class="text-sm text-gray-600">
+                        <p class="mb-3">Se añadio la opcion de anclar DNS y Bloquear Reset de forma manual desde la App cuando existe otro administrador. Accedes a la app con la contraseña 7637899.</p>
+                        <ul class="space-y-1.5">
+                            <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-gray-400"></span> wYMagicXsu MDM, Se soluciono el error que al reiniciar el equipo quedaba sin conexion a wifi.</li>
+                            <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-gray-400"></span> wYMagicXsu MDM, Se redujo el consumo de la bateria.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Reseller Section -->
+        <section id="reseller" class="animate-fade-in delay-400">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+                    <i class="fa-solid fa-handshake text-sm"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">Reseller Oficial</h2>
+            </div>
+
+            <article class="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-subtle hover:shadow-md transition-shadow group">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-xl font-bold text-gray-900">wYMagicServer</h3>
+                            <span class="bg-gray-100 text-gray-700 border border-gray-200 text-[10px] uppercase font-bold px-2.5 py-1 rounded-full tracking-wide">Distribuidor Principal</span>
+                        </div>
+                        <p class="text-sm text-gray-500 font-medium">Adquiere tus licencias y servicios de forma segura y directa.</p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
+                        <a href="https://wymagicserver.es/" target="_blank" class="flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 text-gray-700 px-5 py-2.5 rounded-xl font-medium transition-all text-sm">
+                            <i class="fa-solid fa-globe"></i>
+                            Sitio Web
+                        </a>
+                        <a href="https://wa.me/message/K3NUVQUXNQGDL1" target="_blank" class="flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-2.5 rounded-xl font-medium transition-all text-sm shadow-sm hover:shadow">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-24 pt-8 border-t border-gray-200 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 animate-fade-in delay-400">
+            <div class="text-sm text-gray-500 font-medium">
+                &copy; 2026 wYMagicTool.
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-900 transition-colors"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Floating Support Button (WhatsApp) -->
+    <a href="https://wa.me/message/K3NUVQUXNQGDL1" target="_blank" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-dark text-white px-5 py-3.5 rounded-full shadow-floating hover:shadow-lg transition-all transform hover:-translate-y-1 animate-fade-in delay-400 group">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="font-semibold text-sm mr-1 hidden sm:block group-hover:block transition-all">Soporte</span>
+    </a>
+
+</body>
+</html>
